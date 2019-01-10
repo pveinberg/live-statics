@@ -1,0 +1,37 @@
+{
+    "name": "petrelli/live-statics",
+    "description": "Rapid development aid package that facilitates data modelling and dynamic integration with views",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+      "statics",
+      "injection",
+      "data",
+      "controller",
+      "services",
+      "mock"
+    ],
+    "authors": [
+        {
+            "name": "Fernando Petrelli",
+            "email": "contact@fernandopetrelli.com"
+        }
+    ],
+    "require": {
+      "php": "^7.0",
+      "laravel/framework": "5.*"
+    },
+    "autoload": {
+      "psr-4": {
+        "Petrelli\\LiveStatics\\": "src/"
+      }
+    },
+    "extra": {
+      "laravel": {
+          "providers": [
+              "Petrelli\\LiveStatics\\BaseServiceprovider"
+          ]
+      }
+    },
+    "minimum-stability": "stable"
+}

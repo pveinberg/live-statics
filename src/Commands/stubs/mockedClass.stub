@@ -1,0 +1,31 @@
+<?php
+
+namespace App\{{classPath}};
+
+use \App\{{interfacesPath}}\{{className}}Interface;
+use \Petrelli\LiveStatics\BaseMock;
+
+
+class {{className}}Mock extends BaseMock implements {{className}}Interface
+{
+
+
+	public static $baseInterface = {{className}}Interface::class;
+
+
+	// Mostly used to ignore eloquent scopes
+	protected $returnSelfMethods = [];
+
+
+	public static function define(&$mock)
+	{
+
+		// Attributes
+		$mock->id          = rand(1,1000);
+		$mock->title       = app('faker')->name();
+		$mock->slug        = str_slug($mock->title);
+
+	}
+
+
+}
