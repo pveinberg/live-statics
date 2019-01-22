@@ -1,13 +1,10 @@
 # About Live-Statics
 
-Live-Statics is an open source Laravel package that helps developers providing them with a quick way to implement static pages, facilitating data injection into real views, in a way that all behaviors will be the same as the real ones. You won't have to spend any time with integration tasks any more.
+Live-Statics is an open source Laravel package that will help you quickly build prototypes and static pages facilitating data injection into real views. Because all mocked objects will behave as the real ones you won't have to spend any time with integration tasks.
 
-Given that your statics and live views will be all the same, you will be allowed you to switch between them at any time, modifying things once for both of them.
-Generated url's will behave as the real ones, providing you with a fully functional 'live-static' version of your web application that you can navigate clicking around.
+Both real and mocked data sources will live together so you will be able you to switch between them at any time. Also because our fake objects will behave as real, a fully functional 'live-static' version of your web application will be accessible to explore and click around.
 
-You will be able to parametrize almost any generated content, so your statics can be changed in real time to modify how your site looks, which version of the fake data is injected and how shuld it be shown. This will come incredibly handy to perform visual QA, client presentations, and simply just to have a glance on how your site will behave with dynamic content.
-
-Here's a [link to the full article](https://todo.com) with detailed explanations and live examples. Please give it a read!
+Almost any generated content can be parametrized, so your live-statics can be modified in real time by just passing some URL parameters. This will come incredibly handy to perform visual QA, client presentations, and simply just to have a glance on how your site will behave with dynamic content.
 
 
 # Install
@@ -37,8 +34,6 @@ php artisan vendor:publish --provider="Petrelli\LiveStatics\BaseServiceProvider"
 
 
 # Usage
-
-Please give it a read to [the full article](https://todo.com) to understand better how the internals work. This package is more about concepts than advanced technicalities.
 
 
 ## Create a new mocked class, and it's interface
@@ -90,7 +85,7 @@ class Book extends Model implements BookInterface
 }
 ```
 
-## Create a new mocked eloquent model
+## Create a new mocked Eloquent model
 
 This is a special case of a general class. The package will provide a quick way for you to bind models as most systems will mock mainly them.
 
@@ -111,7 +106,7 @@ php artisan live-statics:model Book
 
 Here is the main difference with a regular class, the package will use the path configuration for models provided on `config/live-statics.php` to find and bind them properly.
 
-3. Make your 'Real eloquent model' implement the newly created interface
+3. Make your 'Real Eloquent model' implement the newly created interface
 
 
 ## Add a custom namespace when creating new mocked classes or models
@@ -159,7 +154,7 @@ class Controller extends BaseController
 
 ```
 
-If you are not confortable injecting as a formal parameter you can use the `app` function provided by laravel:
+If you are not confortable injecting dependencies as formal parameters you can use the `app` function provided by laravel:
 
 ```php
 use \App\Interfaces\BookInterface;
@@ -180,17 +175,17 @@ class Controller extends BaseController
 ```
 
 
-Once you are using interfaces to determine which instance (real or fake) your site shall use, then just proceed to enable/disable live-statics with your configured subdomain (By default 'static').
+Once interfaces are being used to determine which instance (real or fake) your site shall use, you can just proceed to enable/disable live-statics by adding your configured subdomain (By default 'static').
 
 For example:
 
 ```bash
 
 # Real site
-# live.com
+live.com
 
 # Live statics site
-# static.live.com
+static.live.com
 
 ```
 
@@ -201,18 +196,27 @@ You can change this subdomain modifying the `subdomain` option inside `config/li
 
 # Extra functionalities
 
-TODO
+Docs to be completed.
 
 ## Namespaces and directories configuration
 
+Docs to be completed.
+
 ## Extending Faker through providers
+
+Docs to be completed.
 
 ## Creating different versions of your mocked classes
 
+Docs to be completed.
+
 ## Modifying your statics in real time through URL parameters
+
+Docs to be completed.
 
 ## Partial mocking
 
+Docs to be completed.
 
 
 # License
