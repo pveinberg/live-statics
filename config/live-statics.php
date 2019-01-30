@@ -15,6 +15,7 @@ return [
     'subdomain' => 'static',
 
 
+
     /*
     |--------------------------------------------------------------------------
     | Path configurations
@@ -33,6 +34,7 @@ return [
     'path_interfaces' => 'Interfaces',
     'path_models'     => '',
     'path_mocks'      => 'Mocks',
+
 
 
     /*
@@ -66,6 +68,7 @@ return [
     ],
 
 
+
     /*
     |--------------------------------------------------------------------------
     | Mocked Models
@@ -86,9 +89,23 @@ return [
     |
     */
 
-
     'mocked_models' => [
     ],
+
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Base Namespace
+    |--------------------------------------------------------------------------
+    |
+    | Added as a simple way to change the way to bind models. You usually won't
+    | need to modify this
+    |
+    */
+
+    'base_namespace'  => 'App',
+
 
 
     /*
@@ -104,9 +121,10 @@ return [
     |
     */
 
-   'faker_providers' => [
+    'faker_providers' => [
         // \Petrelli\LiveStatics\Providers\FakerImagePicsumProvider::class,
-   ]
+    ],
+
 
 
 ];

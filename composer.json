@@ -21,9 +21,14 @@
       "php": "^7.0",
       "laravel/framework": "5.*"
     },
+    "require-dev": {
+      "orchestra/testbench": "~3.0",
+      "phpunit/phpunit": "^7.5"
+    },
     "autoload": {
       "psr-4": {
-        "Petrelli\\LiveStatics\\": "src/"
+        "Petrelli\\LiveStatics\\": "src/",
+        "Petrelli\\LiveStatics\\Tests\\Extras\\": "tests/Extras/"
       }
     },
     "extra": {

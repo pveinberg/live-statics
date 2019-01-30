@@ -51,7 +51,7 @@ class BaseServiceProvider extends ServiceProvider
         // Enable mocked elements when the configured subdomain is present
         // Also save which version we are trying to load
 
-        $domain = request()->server->get('HTTP_HOST');
+        $domain = $this->app->request->getHttpHost();
         $fullSubdomain = explode('.', $domain)[0];
 
         $subdomain = preg_replace('/[^a-zA-Z]/', '', $fullSubdomain);
@@ -93,12 +93,12 @@ class BaseServiceProvider extends ServiceProvider
 
             foreach (config('live-statics.mocked_models') as $model) {
 
-                $interface = join('\\', array_filter(['App', config('live-statics.path_interfaces'), config('live-statics.path_models'), $model . 'Interface']));
+                $interface = join('\\', array_filter([config('live-statics.base_namespace'), config('live-statics.path_interfaces'), config('live-statics.path_models'), $model . 'Interface']));
 
                 $this->app->bind($interface, function () use ($enabled, $model, $version) {
                     if ($enabled) {
 
-                        $entity = join('\\', array_filter(['App', config('live-statics.path_mocks'), config('live-statics.path_models'), $model . 'Mock']));
+                        $entity = join('\\', array_filter([config('live-statics.base_namespace'), config('live-statics.path_mocks'), config('live-statics.path_models'), $model . 'Mock']));
 
                         if ($version) {
                             $versionedEntity = $entity . $version;
@@ -110,7 +110,7 @@ class BaseServiceProvider extends ServiceProvider
 
                         return $entity::create();
                     } else {
-                        return app(join('\\', array_filter(['App', config('live-statics.path_models'), $model])));
+                        return app(join('\\', array_filter([config('live-statics.base_namespace'), config('live-statics.path_models'), $model])));
                     }
                 });
             }
