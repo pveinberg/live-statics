@@ -1,5 +1,7 @@
 # About Live-Statics
 
+[![Build Status](https://travis-ci.org/ferpetrelli/live-statics.svg?branch=master)](https://travis-ci.org/ferpetrelli/live-statics)
+
 Live-Statics is an open source Laravel package that will help you quickly build prototypes and static pages facilitating data injection into real views. Because all mocked objects will behave as the real ones you won't have to spend any time with integration tasks.
 
 Both real and mocked data sources will live together so you will be able you to switch between them at any time. Also because our fake objects will behave as real, a fully functional 'live-static' version of your web application will be accessible to explore and click around.
