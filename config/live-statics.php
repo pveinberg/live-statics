@@ -113,11 +113,12 @@ return [
     | Faker extra providers
     |--------------------------------------------------------------------------
     |
-    | To generate better content for your site you can specify faker provider
+    | To generate better content for your site you can specify faker providers
     | classes here and they will be added automatically when creating the
     | singleton instance.
     |
-    | As the default example, you can overload the image generator to use Picsum.
+    | Here as a working example, you can use a new image provider
+    | to generate Picsum URL's instead of the default Lorempixel ones
     |
     */
 

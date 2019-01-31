@@ -6,16 +6,14 @@ use Illuminate\Contracts\Routing\UrlRoutable;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Str;
 
-// use \App\Mocks\Models\Traits\HasBlocks;
-// use \App\Mocks\Models\Traits\HasImages;
+// Base Traits
+use \Petrelli\LiveStatics\Traits\Pagination;
+
 
 class BaseMock implements Arrayable, UrlRoutable
 {
 
-    /**
-     * IMPORTANT TRAITS: Used to define Twill functions to render blocks and images
-     */
-    // use HasImages, HasBlocks;
+    use Pagination;
 
     public static $baseClass;
     public static $baseInterface;

@@ -129,7 +129,7 @@ class CreateMockedClass extends Command
 
         $this->info("\nThe Mocked class {$className} has been created successfully!");
         $this->line("To edit please go to {$mockAbsoluteFile}");
-        $this->line("Now to BIND them open `config/live-statics.php` and add to the 'mocked_models' array the following element:");
+        $this->line("Now to BIND them open `config/live-statics.php` and add to the 'mocked_classes' array the following element:");
         $this->info("{$interfaceClass}::class => [{$mockClass}::class, 'YOUR_REAL_CLASS']\n\n");
 
     }

@@ -2,7 +2,6 @@
 
 namespace Petrelli\LiveStatics\Providers;
 
-
 use Faker\Provider\Base as BaseProvider;
 
 
@@ -10,7 +9,6 @@ class FakerImagePicsumProvider extends BaseProvider
 {
 
     protected static $baseUrl = "http://picsum.photos/";
-
 
     protected static $picsumPhotosMaxImageID = 1084;
 
@@ -27,26 +25,17 @@ class FakerImagePicsumProvider extends BaseProvider
         1030=>649, 1034=>538, 1046=>47
     ];
 
-    protected static function validPicsumPhotosImageID($id=null)
-    {
-        if ( is_null($id) ) {
-            $id = static::numberBetween(0, static::$picsumPhotosMaxImageID);
-        }
-        if ( array_key_exists($id, static::$picsumPhotosInvalidImageIDs) ) {
-            return static::$picsumPhotosInvalidImageIDs[$id];
-        }
-        return $id;
-    }
 
-    public static function imageUrl($width = 640, $height = 480, $random = null)
+    public static function imageUrl($width = 640, $height = 480, $specificId = null)
     {
+
         $url = "{$width}/{$height}";
         $args = [];
 
-        if ( !$random ) {
+        if ( !$specificId ) {
             $args["image"] = static::validPicsumPhotosImageID(rand(1, self::$picsumPhotosMaxImageID));
         } else {
-            $args["image"] = static::validPicsumPhotosImageID($random);
+            $args["image"] = static::validPicsumPhotosImageID($specificId);
         }
 
         if ( count($args) > 0 ) {
@@ -54,6 +43,23 @@ class FakerImagePicsumProvider extends BaseProvider
         }
 
         return static::$baseUrl . $url;
+
+    }
+
+
+    protected static function validPicsumPhotosImageID($id = null)
+    {
+
+        if ( is_null($id) ) {
+            $id = static::numberBetween(0, static::$picsumPhotosMaxImageID);
+        }
+
+        if ( array_key_exists($id, static::$picsumPhotosInvalidImageIDs) ) {
+            return static::$picsumPhotosInvalidImageIDs[$id];
+        }
+
+        return $id;
+
     }
 
 
