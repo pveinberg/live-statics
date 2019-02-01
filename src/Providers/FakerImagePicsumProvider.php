@@ -50,7 +50,7 @@ class FakerImagePicsumProvider extends BaseProvider
     protected static function validPicsumPhotosImageID($id = null)
     {
 
-        if ( is_null($id) ) {
+        if ( is_null($id) || !array_key_exists($id, static::$picsumPhotosInvalidImageIDs) ) {
             $id = static::numberBetween(0, static::$picsumPhotosMaxImageID);
         }
 
