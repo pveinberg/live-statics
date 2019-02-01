@@ -11,6 +11,7 @@ use Petrelli\LiveStatics\Commands\CreateMockedClass;
 class BaseServiceProvider extends ServiceProvider
 {
 
+
     /**
      * Bootstrap any application services.
      *
@@ -27,6 +28,7 @@ class BaseServiceProvider extends ServiceProvider
 
     }
 
+
     public function publishConfig()
     {
 
@@ -39,6 +41,7 @@ class BaseServiceProvider extends ServiceProvider
         ]);
 
     }
+
 
     /**
      * Register any application services.
@@ -78,6 +81,7 @@ class BaseServiceProvider extends ServiceProvider
         ]);
 
     }
+
 
     protected function bindElements($enabled = false, $version = 0)
     {
@@ -168,6 +172,7 @@ class BaseServiceProvider extends ServiceProvider
 
     }
 
+
     protected function registerLaravelDirectives()
     {
 
@@ -188,6 +193,7 @@ class BaseServiceProvider extends ServiceProvider
         });
 
     }
+
 
 }
 

@@ -65,31 +65,43 @@ class BaseMockTest extends \Orchestra\Testbench\TestCase
 
     protected function getPackageAliases($app)
     {
+
         return [
             'Route' => \Illuminate\Support\Facades\Route::class,
         ];
+
     }
 
 
     public function testInstanceImplementation()
     {
+
         $this->assertInstanceOf(BookMock::class, $this->book);
+
     }
+
 
     public function testReturnSelfMethods()
     {
+
         $this->assertEquals($this->book->published(), $this->book);
+
     }
+
 
     public function testDefinedAttributes()
     {
+
         $this->assertEquals($this->book->id, 100);
         $this->assertEquals($this->book->title, 'Mocked Book');
         $this->assertEquals($this->book->slug, 'mocked-book');
+
     }
+
 
     public function testPrimaryKeyRouteHelper()
     {
+
         \Route::get('test/{slug}')->name('test');
 
         // Book has 'slug' as primary key
@@ -100,22 +112,32 @@ class BaseMockTest extends \Orchestra\Testbench\TestCase
 
     }
 
+
     public function testUndefinedParameter()
     {
+
         $this->expectExceptionMessage('Undefined property');
         $this->book->url;
+
     }
+
 
     public function testDefinedParameterInMockedObject()
     {
+
         $this->assertNotNull($this->video->url);
         $this->assertEquals($this->video->url, 'http://youtube.com');
+
     }
+
 
     public function testDefinedParameterInMutator()
     {
+
         $this->assertNotNull($this->video->urlMutator);
         $this->assertEquals($this->video->urlMutator, 'http://youtube.com/mutator');
+
     }
+
 
 }

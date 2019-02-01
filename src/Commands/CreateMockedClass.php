@@ -30,6 +30,7 @@ class CreateMockedClass extends Command
 
     }
 
+
     public function handle()
     {
 
@@ -49,6 +50,7 @@ class CreateMockedClass extends Command
     {
 
         return array_filter(preg_split('/\\\\|\//', $namespaces));
+
     }
 
 

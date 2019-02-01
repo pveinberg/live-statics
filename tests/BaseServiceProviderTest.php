@@ -53,6 +53,7 @@ class BaseServiceProviderTest extends \Orchestra\Testbench\TestCase
 
         $this->assertInstanceOf(Book::class, $object);
         $this->assertEquals($object->title, 'Real Book');
+
     }
 
 
