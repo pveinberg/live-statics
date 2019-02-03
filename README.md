@@ -8,6 +8,15 @@ Both real and mocked data sources will live together so you will be able you to 
 
 Almost any generated content can be parametrized, so your live-statics can be modified in real time by just passing some URL parameters. This will come incredibly handy to perform visual QA, client presentations, and simply just to have a glance on how your site will behave with dynamic content.
 
+# Custom Install
+
+1. Criar uma máquina no docker com as configurações requeridas, incluíndo o composer, a versão certa do laravel, etc;
+2. Rodar a aplicação; 
+3. Configurar o banco mysql com a base do redmine para testes; 
+4. Implementar as alterações na aplicação para visualizar as estatísticas;
+5. Configurar servidor docker com as configurações necessárias para rodar essa aplicação; 
+6. Rodar e testar;
+
 
 # Install
 
